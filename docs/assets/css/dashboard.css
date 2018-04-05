@@ -73,6 +73,7 @@ body {
   color: #495057;
   text-align: left;
   background-color: #f5f7fb;
+  
 }
 
 [tabindex="-1"]:focus {
@@ -18470,3 +18471,22 @@ svg {
 .fe-zoom-out:before {
   content: "\ea06";
 }
+
+#internet-ex-text{
+	display:none;
+	
+}
+
+ 
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+ 
+	.page,.footer{
+		display:none;
+	}
+	body:before {
+   content: "STS Workforce on E-Learning & Educational Innovation content is not supported by Internet Explorer. Please use Chrome, Firefox, or Safari.";
+}
+	
+}
+
