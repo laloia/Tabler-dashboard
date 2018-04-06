@@ -63,10 +63,10 @@
                     <a href="./index.html" class="nav-link"><i class="fe fe-check-square"></i> Learn CT Surgery Usage</a>
                   </li>
                   <li class="nav-item">
-                    <a href="curriculum.html" class="nav-link active"><i class="fe fe-box"></i> Curriculum Updates</a>
+                    <a href="curriculum.html" class="nav-link"><i class="fe fe-box"></i> Curriculum Updates</a>
                   </li>
                   <li class="nav-item">
-                    <a href="e-books.html" class="nav-link"><i class="fe fe-book"></i> E-Books</a>
+                    <a href="e-books.html" class="nav-link active"><i class="fe fe-book"></i> E-Books</a>
                   </li>
                   <li class="nav-item">
                     <a href="" class="nav-link"><i class="fe fe-file"></i> About</a>
@@ -78,10 +78,124 @@
         </div>
         <div class="page-content">
           <div class="container">
-			<center><a class="btn btn-primary" target="_blank" href="https://docs.google.com/spreadsheets/d/11kQMdZFqdXFCjjvUGBBzsYrOCcH8VWlh7WYLhvR1lbA/edit?usp=sharing" role="button"> View on Google Sheets</a></center>
-			  <br/>
-			  <iframe id="themeframe" class="embed-responsive" frameborder="1" style="min-height:800px;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT0qFtJ03qwqiYOr_bo1uZwe0qTw-eLhCt8XwM-ay-IkqzRol8_28jb2eHZiPDm8pYndEVxG4Z_jCLU/pubhtml?widget=true&amp;headers=false"></iframe>
-		
+			<h4>E-Books</h4>
+			 <div class="row row-cards">
+					<div class="col-lg-6 col-sm-12">
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Cardiac & Congenital e-Book</h3>
+							</div>
+							<div id="c-c-chart" style="height: 20rem"></div>
+							<div class="table-responsive">
+							</div><hr>
+							<div class="card-body text-center">
+								<div class="display-4 font-weight-bold mb-0">17</div>
+								<p class="figure-caption">Out of 108 chapters</p>
+								<div class="progress progress-sm">
+									<div class="progress-bar bg-blue" style="width: 15.7%"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-sm-12 mr-0">
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Pearson's Thoracic & Esophageal Surgery e-Book</h3>
+							</div>
+							<div id="pearson-chart" style="height: 20rem"></div>
+							<div class="table-responsive">
+							</div><hr>
+							<div class="card-body text-center">
+								<div class="display-4 font-weight-bold mb-0">133</div>
+								<p class="figure-caption">Out of 236 chapters</p>
+								<div class="progress progress-sm">
+									<div class="progress-bar bg-green" style="width: 56.4%"></div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+				 <script>
+                      require(['c3', 'jquery'], function(c3, $) {
+                      	$(document).ready(function(){
+                      		var chart = c3.generate({
+                      			bindto: '#c-c-chart', // id of chart wrapper
+                      			data: {
+                      				columns: [
+                      				    // each columns data
+                      					['data1', 17],
+                      					['data2', 91]
+                      				],
+                      				type: 'donut', // default type of chart
+                      				colors: {
+                      					'data1': tabler.colors["blue"],
+                      					'data2': tabler.colors["blue-lighter"]
+                      				},
+                      				names: {
+                      				    // name of each serie
+                      					'data1': 'Finalized',
+                      					'data2': 'Outstanding'
+                      				}
+                      			},
+                      			axis: {
+                      			},
+                      			legend: {
+                                      show: true, //hide legend
+                      			},
+                      			padding: {
+                      				bottom: 0,
+                      				top: 0
+                      			},
+								donut:{
+									title:'Manuscripts Finalized',
+									
+								},
+                      		});
+                      	});
+                      });
+					  
+					  require(['c3', 'jquery'], function(c3, $) {
+                      	$(document).ready(function(){
+                      		var chart = c3.generate({
+                      			bindto: '#pearson-chart', // id of chart wrapper
+                      			data: {
+                      				columns: [
+                      				    // each columns data
+                      					['data1', 133],
+                      					['data2', 103]
+                      				],
+                      				type: 'donut', // default type of chart
+                      				colors: {
+                      					'data1': tabler.colors["green"],
+                      					'data2': tabler.colors["green-lighter"]
+                      				},
+                      				names: {
+                      				    // name of each serie
+                      					'data1': 'Finalized',
+                      					'data2': 'Outstanding'
+                      				}
+                      			},
+                      			axis: {
+                      			},
+                      			legend: {
+                                      show: true, //hide legend
+                      			},
+                      			padding: {
+                      				bottom: 0,
+                      				top: 0
+                      			},
+								donut:{
+									title:'Manuscripts Finalized',
+									
+								},
+                      		});
+                      	});
+                      });
+                    </script>
+				
+			
+				
+			
                  
             </div>
           </div>
