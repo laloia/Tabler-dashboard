@@ -118,15 +118,29 @@
 							<div class="card-header">
 								<h3 class="card-title">Cardiac & Congenital e-Book</h3>
 							</div>
+							<div id="c-c-chart-manuscripts" style="height: 20rem"></div>
+							<div class="table-responsive">
+							</div><hr>
+							<div class="card-body text-center">
+							
+							
+							<div class="display-4 font-weight-bold mb-0">73</div>
+								<p class="figure-caption">Out of 108 manuscripts turned in</p>
+								<div class="progress progress-sm">
+									<div class="progress-bar bg-purple" style="width: 67.6%"></div>
+								</div>
+								</div>
+								<br/><br/>
 							<div id="c-c-chart" style="height: 20rem"></div>
 							<div class="table-responsive">
 							</div><hr>
 							<div class="card-body text-center">
 								<div class="display-4 font-weight-bold mb-0">17</div>
-								<p class="figure-caption">Out of 108 chapters</p>
+								<p class="figure-caption">Out of 108 chapters finalized</p>
 								<div class="progress progress-sm">
 									<div class="progress-bar bg-blue" style="width: 15.7%"></div>
 								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -139,7 +153,7 @@
 							<div class="table-responsive">
 							</div><hr>
 							<div class="card-body text-center">
-								<div class="display-4 font-weight-bold mb-0">133</div>
+								<div class="display-4 font-weight-bold mb-0">145</div>
 								<p class="figure-caption">Out of 236 chapters</p>
 								<div class="progress progress-sm">
 									<div class="progress-bar bg-green" style="width: 56.4%"></div>
@@ -149,7 +163,47 @@
 					</div>	
 				</div>
 				 <script>
-                      require(['c3', 'jquery'], function(c3, $) {
+                       require(['c3', 'jquery'], function(c3, $) {
+                      	$(document).ready(function(){
+                      		var chart = c3.generate({
+                      			bindto: '#c-c-chart-manuscripts', // id of chart wrapper
+                      			data: {
+                      				columns: [
+                      				    // each columns data
+                      					['data1', 73],
+                      					['data2', 35]
+                      				],
+                      				type: 'donut', // default type of chart
+                      				colors: {
+                      					'data1': tabler.colors["purple"],
+                      					'data2': tabler.colors["purple-lighter"]
+                      				},
+                      				names: {
+                      				    // name of each serie
+                      					'data1': 'Manuscripts Received',
+                      					'data2': 'Outstanding Manuscripts'
+                      				}
+                      			},
+                      			axis: {
+                      			},
+                      			legend: {
+                                      show: true, //hide legend
+                      			},
+                      			padding: {
+                      				bottom: 0,
+                      				top: 0
+                      			},
+								donut:{
+									title:'Initial Manuscripts Received',
+									
+								},
+                      		});
+                      	});
+                      });
+					  
+					  
+					  
+					  require(['c3', 'jquery'], function(c3, $) {
                       	$(document).ready(function(){
                       		var chart = c3.generate({
                       			bindto: '#c-c-chart', // id of chart wrapper
@@ -180,7 +234,7 @@
                       				top: 0
                       			},
 								donut:{
-									title:'Manuscripts Finalized',
+									title:'Chapters Finalized',
 									
 								},
                       		});
@@ -194,8 +248,8 @@
                       			data: {
                       				columns: [
                       				    // each columns data
-                      					['data1', 133],
-                      					['data2', 103]
+                      					['data1', 145],
+                      					['data2', 88]
                       				],
                       				type: 'donut', // default type of chart
                       				colors: {
@@ -218,7 +272,7 @@
                       				top: 0
                       			},
 								donut:{
-									title:'Manuscripts Finalized',
+									title:'Chapters Finalized',
 									
 								},
                       		});
